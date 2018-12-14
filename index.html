@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <meta charvctk_set="UTF-8">
+    <title> Audio samples from "Generative Adversarial Network based Speaker Adaptation for High Fidelity WaveNet Vocoder"</title>
+  </head>
+    <h2> Audio samples from "Generative Adversarial Network based Speaker Adaptation for High Fidelity WaveNet Vocoder"</h2>
+
+  <body>
+
+    <p><b>Paper</b>: <a href="https://arxiv.org/submit/2498269/view">arXiv<a></p>
+    <p><b>Authors:</b> Qiao Tian, Bing Yang, Jing Chen, Benlai Tang, Shan Liu.</p>
+    <p><b>Abstract:</b> Neural networks based vocoders, typically the WaveNet, have achieved spectacular performance for text-to-speech (TTS)
+    in recent years. Although state-of-the-art parallel WaveNet has addressed the issue of real-time waveform generation,
+    there remains problems. Firstly, due to the noisy input signal of the model, there is still a gap between the quality
+    of generated and natural waveforms. Secondly, a parallel WaveNet is trained under a distilled training framework, which
+    makes it tedious to adapt a well trained model to a new speaker. To address these two problems, this paper proposes an
+    end-to-end adaptation method based on the generative adversarial network (GAN), which can reduce the computational cost
+    for the training of new speaker adaptation. Our subjective experiments shows that the proposed training method can
+    further reduce the quality gap between generated and natural waveforms.</p>
+    <div>
+      <h3> Experiment: Adaptation on ground-truth mel-spectrogram</h3>
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          </th><th>Ground-truth</th><th>AGAN(&lambda; = 0.05)</th><th>AGAN(&lambda; = 1.5)</th><th>Parallel WaveNet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4"><span>1: For while Roman Catholics and Dissenters were encouraged to see ministers of their own persuasion,</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ003-0207.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ003-0207.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ003-0207.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ003-0207.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>2: Pieman and ballad-monger did their usual roaring trade amidst the dense throng.</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ008-0096.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ008-0096.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ008-0096.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ008-0096.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>3: He was lying on his face, his legs tied up to his hips so as to allow of the body fitting into the hole.</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ014-0105.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ014-0105.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ014-0105.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ014-0105.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>4: Brennan saw a man in the window who closely resembled Lee Harvey Oswald, and that Brennan believes the man he saw was
+        in fact.</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ034-0164.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ034-0164.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ034-0164.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ034-0164.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>5: Such ideas of grandeur were apparently accompanied by notions of oppression.
+</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ040-0038.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ040-0038.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ040-0038.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ040-0038.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="4"><span>6: This assignment was given to Agent James P. Hosty, Jr. of the Dallas office upon Fain's retirement.
+</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth/LJ047-0061.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_0.05/LJ047-0061.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/agan_lambda_1.5/LJ047-0061.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/parallel_wavenet/LJ047-0061.wav" type="audio/wav"></audio></td>
+        </tr>
+
+      </tbody>
+    </table>
+    <h3> Extension experiment: Re-train on predicted mel-spectrogram</h3>
+      <div>
+        (Completed in our internal dataset which is not clean, all mel-spectrograms was predicted by a tacotron-like model.)
+      </div>
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          </th><th>Parallel WaveNet</th><th>AGAN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2"><span>1: I never saw anything like her in my life.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/pred_melspec_pwn/test_pwn_a0572.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/pred_melspec_agan/test_agan_a0572.wav" type="audio/wav"></audio></td>
+        </tr>
+        <tr>
+          <td colspan="2"><span>2: 你可以教我怎么在YouTube上下载视频吗？</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/pred_melspec_pwn/test_pwn_CE_test_08.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/pred_melspec_agan/test_agan_CE_test_08.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>3: 话说在越来越重视社交媒体的当下，instagram的粉丝数量, 是衡量一个明星影响力的关键。</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/pred_melspec_pwn/test_pwn_CE_test_23.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/pred_melspec_agan/test_agan_CE_test_23.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>4: 11月2号晴，22到29度；11月3号小雨转阴，22到30度；</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/pred_melspec_pwn/test_pwn_CN_test_10.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/pred_melspec_agan/test_agan_CN_test_10.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
